@@ -1,0 +1,65 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Admin {
+  id       String   @id @default(uuid()) @map("_id")
+  name     FullName
+  email    String   @unique
+  password String
+  Test     Test[]
+  tokens   String[]
+}
+
+model Student {
+  id       String   @id @default(uuid()) @map("_id")
+  name     FullName
+  std      Standard
+  email    String   @unique
+  password String
+  phoneNo  String
+  enrolNo  Int
+  results  Result[]
+  tokens   String[]
+}
+
+model Test {
+  id         String   @id @default(uuid()) @map("_id")
+  date       DateTime
+  std        String
+  subject    Subject
+  reviewerId String
+  reviewer   Admin    @relation(fields: [reviewerId], references: [id])
+  results    Result[]
+}
+
+model Result {
+  id        String  @id @default(uuid()) @map("_id")
+  studentId String
+  testId    String
+  student   Student @relation(fields: [studentId], references: [id])
+  Test      Test    @relation(fields: [testId], references: [id])
+}
+
+type FullName {
+  firstName String
+  lastName  String
+}
+
+enum Standard {
+  EIGHT
+  NINE
+  TEN
+}
+
+enum Subject {
+  MATHS
+  SCIENCE
+  ENGLISH
+  SOCIAL_STUDIES
+}
