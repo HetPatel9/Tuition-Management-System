@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+nav{
+    position: sticky;
+    top:0;
+}
+.admission-ads{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.admission-ads h1, .admission-ads h2{
+    text-align: center;
+    width: 50%;
+    margin: auto;
+}
+.admission-ads h1{
+    font-size: 50px;
+    color: rgb(33, 194, 239);
+}
+.admission-ads h2{
+    color: rgb(60, 245, 125);
+    font-size: 40px;
+}
+.information{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.standard{
+    width: 30%;
+    margin: auto;
+    margin-top: 20px;
+}
+.standard h1{
+    font-size: 40px;
+    color: greenyellow;
+    text-align: center;
+}
+.standard li{
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(252, 65, 162);
+}
+ul{
+    list-style-type: none;
+    margin: 10px 0px;
+}
+.Scollar h1{
+    width: 100%;
+    text-align: center;
+    font-size: 50px;
+}
+#slide-result{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 50%;
+    margin: auto;
+    /* border: 2px solid red; */
+    align-items: center;
+}
+#slide-result button{
+    width: 30px;
+    height: 80px;
+    font-size: 40px;
+}
+.results{
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    margin: 10px;
+    /* margin-top: 10px;
+    margin-bottom: 10px; */
+    overflow-x: hidden;
+    /* border: 2px solid green; */
+}
+.topper-card{
+    min-width: 45%;
+    margin-right: 2.5%;
+    margin-left: 2.5%;
+}
+.topper-card img{
+    width: 100%;
+    margin-bottom: 10px;
+}
+.topper-card table{
+    margin: auto;
+}

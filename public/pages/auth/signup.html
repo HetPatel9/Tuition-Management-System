@@ -5,11 +5,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sign Up</title>
 </head>
 
 <body>
     <h1>Signup Page</h1>
+    <form action="" style="width: 30%; margin: auto;">
+        <fieldset style="display: flex; flex-direction: column;">
+            <legend>Student Personal Details</legend>
+            <label for="fname">First Name: </label>
+            <input type="text" name="fname" id="fname" required>
+            <label for="lname">Last Name: </label>
+            <input type="text" name="lname" id="lname" required>
+            <label for="email">Email: </label>
+            <input type="email" name="email" id="email" required>
+            <label for="password">Pasword:</label>
+            <input type="password" name="password" id="password" required>
+            <label for="name">Standard: </label>
+            <input type="number" name="std" id="std" required>
+            <label for="phNo">Phone No: </label>
+            <input type="number" name="phNo" id="phNo" required>
+        </fieldset>
+        <input type="submit" name="submit" id="submit">
+    </form>
 </body>
 
 </html>
