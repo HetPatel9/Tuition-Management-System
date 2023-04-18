@@ -60,10 +60,10 @@ ul{
 #slide-result{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    width: 70%;
+    justify-content: center;
+    width: 50%;
     margin: auto;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     align-items: center;
 }
 #slide-result button{
@@ -74,18 +74,17 @@ ul{
 .results{
     display: flex;
     flex-direction: row;
-    width: 90%;
-    margin: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    overflow: auto;
-    border: 2px solid green;
+    width: 70%;
+    margin: 10px;
+    /* margin-top: 10px;
+    margin-bottom: 10px; */
+    overflow-x: hidden;
+    /* border: 2px solid green; */
 }
 .topper-card{
-    width: 30%;
-    overflow: auto;
-    /* margin-left:2%;
-    margin-right:2%; */
+    min-width: 45%;
+    margin-right: 2.5%;
+    margin-left: 2.5%;
 }
 .topper-card img{
     width: 100%;
