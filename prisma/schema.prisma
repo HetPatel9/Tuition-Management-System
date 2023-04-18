@@ -12,6 +12,7 @@ model Admin {
   name     FullName
   email    String   @unique
   password String
+  phoneNo  String
   Test     Test[]
   tokens   String[]
 }
@@ -31,8 +32,9 @@ model Student {
 model Test {
   id         String   @id @default(uuid()) @map("_id")
   date       DateTime
-  std        String
+  std        Standard
   subject    Subject
+  total      Int
   reviewerId String
   reviewer   Admin    @relation(fields: [reviewerId], references: [id])
   results    Result[]
@@ -40,10 +42,13 @@ model Test {
 
 model Result {
   id        String  @id @default(uuid()) @map("_id")
+  marks     Float
   studentId String
   testId    String
   student   Student @relation(fields: [studentId], references: [id])
-  Test      Test    @relation(fields: [testId], references: [id])
+  test      Test    @relation(fields: [testId], references: [id])
+
+  @@unique([studentId, testId])
 }
 
 type FullName {

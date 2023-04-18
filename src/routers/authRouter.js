@@ -14,8 +14,10 @@ router.post('/login', async (req, res) => {
     user = await prisma.student.findUnique({ where: { email } });
     if (!user) {
         user = await prisma.admin.findUnique({ where: { email } });
-        if (user)
-            user.isAdmin = true;
+        if (!user)
+            return res.status(400).send({ message: 'User not found' });
+
+        user.isAdmin = true;
     }
 
     if (!user) {
@@ -39,11 +41,15 @@ router.post('/login', async (req, res) => {
         }
     });
 
-
+    res.cookie('auth-token', token, {
+        httpOnly: true,
+        expires: new Date(Date.now() + 3600000)
+    });
     res.send({ message: 'Success', token });
 });
 
 router.post('/signup', async (req, res) => {
+    console.log(req.body);
     let {
         firstName,
         lastName,
@@ -66,7 +72,7 @@ router.post('/signup', async (req, res) => {
             email,
             password,
             phoneNo,
-            enrolNo,
+            enrolNo: parseInt(enrolNo),
             std: STANDARD[std]
         }
     });
@@ -86,7 +92,11 @@ router.post('/signup', async (req, res) => {
         }
     });
 
-    res.send({ message: 'Success', token });
+    res.cookie('auth-token', token, {
+        httpOnly: true,
+        expires: new Date(Date.now() + 3600000)
+    });
+    res.redirect(301, '/dashboard');
 });
 
 router.post('/register-admin', async (req, res) => {
@@ -117,7 +127,11 @@ router.post('/register-admin', async (req, res) => {
         data: { tokens: { push: token } }
     });
 
-    res.send({ message: 'Success', token });
+    res.cookie('auth-token', token, {
+        httpOnly: true,
+        expires: new Date(Date.now() + 3600000)
+    });
+    res.send({ message: 'Success' });
 });
 
 router.post('/signout', firewall, async (req, res) => {
@@ -128,6 +142,7 @@ router.post('/signout', firewall, async (req, res) => {
         }
     });
 
+    res.cookie('auth-token', '');
     res.send({ message: 'Success' });
 });
 

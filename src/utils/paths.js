@@ -9,6 +9,7 @@ const ADMIN_ADD_RESULT_PAGE = path.join(PUBLIC_DIR, 'pages/admin/result/add.html
 const ADMIN_UPDATE_RESULT_PAGE = path.join(PUBLIC_DIR, 'pages/admin/result/update.html');
 const ADMIN_DELETE_RESULT_PAGE = path.join(PUBLIC_DIR, 'pages/admin/result/delete.html');
 const STUDENT_DASHBOARD = path.join(PUBLIC_DIR, 'pages/student/dashboard.html');
+const PAGE_NOT_FOUND = path.join(PUBLIC_DIR, 'pages/404.html');
 
 
 module.exports = {
@@ -20,5 +21,6 @@ module.exports = {
     ADMIN_ADD_RESULT_PAGE,
     ADMIN_UPDATE_RESULT_PAGE,
     ADMIN_DELETE_RESULT_PAGE,
-    STUDENT_DASHBOARD
+    STUDENT_DASHBOARD,
+    PAGE_NOT_FOUND
 };
