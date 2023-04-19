@@ -5,11 +5,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Delete marks</title>
 </head>
 
 <body>
     <h1>Delete Results Page</h1>
+    <div>
+        <form action="" name="delete-table">
+            <label for="date">Date of Exam</label>
+            <input type="date" name="date" id="date">
+            <label for="standard">Standard</label>
+            <input type="number" name="standard" id="standard">
+            <label for="subject">Subject</label>
+            <input type="text" name="subject" id="subject">
+            <input type="checkbox" name="rec-dlt" id="rec-dlt">
+            <label for="rec-dlt">Delete record only?</label>
+            <textarea name="enrollNos" form="delete-table" id="enrollNos" cols="30" rows="10"></textarea>
+            <input type="submit">
+        </form>
+    </div>
 </body>
 
 </html>
