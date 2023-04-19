@@ -24,9 +24,11 @@ model Student {
   email    String   @unique
   password String
   phoneNo  String
-  enrolNo  Int
+  enrolNo  Int      @unique
   results  Result[]
   tokens   String[]
+
+  @@unique([enrolNo, std], name: "student_unique_key")
 }
 
 model Test {
@@ -36,19 +38,22 @@ model Test {
   subject    Subject
   total      Int
   reviewerId String
-  reviewer   Admin    @relation(fields: [reviewerId], references: [id])
+  reviewer   Admin    @relation(fields: [reviewerId], references: [id], onDelete: Cascade)
   results    Result[]
+
+  @@unique([date, std, subject], name: "test_unique_key")
 }
 
 model Result {
-  id        String  @id @default(uuid()) @map("_id")
-  marks     Float
-  studentId String
-  testId    String
-  student   Student @relation(fields: [studentId], references: [id])
-  test      Test    @relation(fields: [testId], references: [id])
+  id      String  @id @default(uuid()) @map("_id")
+  marks   Float   @default(-1)
+  enrolNo Int
+  status  Status  @default(PRESENT)
+  testId  String
+  test    Test    @relation(fields: [testId], references: [id], onDelete: Cascade)
+  student Student @relation(fields: [enrolNo], references: [enrolNo], onDelete: Cascade)
 
-  @@unique([studentId, testId])
+  @@unique([enrolNo, testId], name: "result_unique_key")
 }
 
 type FullName {
@@ -67,4 +72,9 @@ enum Subject {
   SCIENCE
   ENGLISH
   SOCIAL_STUDIES
+}
+
+enum Status {
+  ABSENT
+  PRESENT
 }

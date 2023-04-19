@@ -1,4 +1,4 @@
-const { Standard, Subject } = require('@prisma/client');
+const { Standard, Subject, Status } = require('@prisma/client');
 
 const PORT = process.env.PORT;
 const ADMIN_REFERENCE_KEY = process.env.ADMIN_REFERENCE_KEY;
@@ -17,10 +17,16 @@ const SUBJECT = {
     3: Subject.SOCIAL_STUDIES
 };
 
+const STATUS = {
+    0: Status.ABSENT,
+    1: Status.PRESENT
+};
+
 module.exports = {
     PORT,
     ADMIN_REFERENCE_KEY,
     JWT_SECRET,
     STANDARD,
-    SUBJECT
+    SUBJECT,
+    STATUS
 };

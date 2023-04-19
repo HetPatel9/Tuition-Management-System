@@ -72,10 +72,12 @@ const bcrypt = require('bcrypt');
     await prisma.result.createMany({
         data: [
             {
+                marks: 50,
                 studentId: student.id,
                 testId: test1.id
             },
             {
+                marks: 50,
                 studentId: student.id,
                 testId: test2.id
             }

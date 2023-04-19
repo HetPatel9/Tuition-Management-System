@@ -45,7 +45,8 @@ router.post('/login', async (req, res) => {
         httpOnly: true,
         expires: new Date(Date.now() + 3600000)
     });
-    res.send({ message: 'Success', token });
+    // res.send({ message: 'Success', token });
+    res.redirect('/dashboard');
 });
 
 router.post('/signup', async (req, res) => {
@@ -105,7 +106,8 @@ router.post('/register-admin', async (req, res) => {
         firstName,
         lastName,
         email,
-        password
+        password,
+        phoneNo
     } = req.body;
 
     if (!refKey || refKey !== ADMIN_REFERENCE_KEY) return res.status(400).send({ message: 'Invalid data' });
@@ -116,7 +118,8 @@ router.post('/register-admin', async (req, res) => {
         data: {
             name: { firstName, lastName },
             email,
-            password
+            password,
+            phoneNo
         }
     });
 
@@ -131,7 +134,8 @@ router.post('/register-admin', async (req, res) => {
         httpOnly: true,
         expires: new Date(Date.now() + 3600000)
     });
-    res.send({ message: 'Success' });
+    // res.send({ message: 'Success' });
+    res.redirect(301, '/dashboard');
 });
 
 router.post('/signout', firewall, async (req, res) => {
