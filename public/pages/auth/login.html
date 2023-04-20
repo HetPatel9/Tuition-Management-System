@@ -10,12 +10,12 @@
 
 <body>
     <h1>Login Page</h1>
-    <form action="" style="width: 30%;display: flex; flex-direction: column;">
+    <form action="/api/login" method="POST" style="width: 30%;display: flex; flex-direction: column;">
         <label for="mailId">MailId</label>
-        <input type="text" name="mailId" id="mailId">
+        <input type="text" name="email" id="mailId">
         <label for="password">Password</label>
         <input type="password" name="password" id="password">
-        <input type="submit" name="submit" id="submit">
+        <button type="submit">Login</button>
     </form>
 </body>
 </html>

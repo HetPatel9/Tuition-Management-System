@@ -23,6 +23,6 @@ mongosh --port=5010
 
 rs.initiate()
 
-rs.add({host: "localhost:5020" })
-rs.add ({host: "localhost:5030"})
+rs.add({host: "localhost:5020"})
+rs.add({host: "localhost:5030"})
 ````

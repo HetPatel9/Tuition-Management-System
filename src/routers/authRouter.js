@@ -4,6 +4,7 @@ const bcrypt = require('bcrypt');
 const firewall = require('./firewall');
 const prisma = require('../prisma');
 const { STANDARD, JWT_SECRET, ADMIN_REFERENCE_KEY } = require('../utils/constants');
+const { LANDING_PAGE } = require('../utils/paths');
 
 const router = Router();
 
@@ -49,7 +50,7 @@ router.post('/login', async (req, res) => {
     res.redirect('/dashboard');
 });
 
-router.post('/signup', async (req, res) => {
+router.post('/register', async (req, res) => {
     console.log(req.body);
     let {
         firstName,
@@ -138,7 +139,7 @@ router.post('/register-admin', async (req, res) => {
     res.redirect(301, '/dashboard');
 });
 
-router.post('/signout', firewall, async (req, res) => {
+router.post('/logout', firewall, async (req, res) => {
     await prisma[req.user.isAdmin ? 'admin' : 'student'].update({
         where: { id: req.user.id },
         data: {
@@ -147,7 +148,9 @@ router.post('/signout', firewall, async (req, res) => {
     });
 
     res.cookie('auth-token', '');
-    res.send({ message: 'Success' });
+
+    // res.send({ message: 'Success' });
+    res.redirect(301, '/')
 });
 
 module.exports = router;
