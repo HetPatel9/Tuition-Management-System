@@ -6,16 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log in</title>
+    <link rel="stylesheet" href="/css/auth/login.css">
 </head>
 
 <body>
-    <h1>Login Page</h1>
-    <form action="/api/login" method="POST" style="width: 30%;display: flex; flex-direction: column;">
-        <label for="mailId">MailId</label>
-        <input type="text" name="email" id="mailId">
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password">
-        <button type="submit">Login</button>
-    </form>
+    <div class="container">
+    <div class="student-photo">
+            <img src="/images/loginpage-student.png" alt="student-image">
+    </div>
+    <div class="student-loginform">
+        <form id="login" action="/api/login" method="POST">
+            <label for="mailId">Mail Id</label>
+            <input type="text" name="email" id="mailId">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password">
+            <button type="submit">Login</button>
+        </form>
+        <p class="signup-link">
+            Create Account <a href="/signup">Signup</a>
+        </p>
+    </div>
+    </div>
+    
 </body>
 </html>

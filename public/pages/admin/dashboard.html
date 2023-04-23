@@ -6,23 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/css/admin/dashborad.css">
 </head>
 
 <body>
-    <h1>Admin Dashboard</h1>
-    <form action="/api/logout" method="POST">
-        <button type="submit">Logout</button>
-    </form>
     <nav>
-        <div class="header"><h1>Welcome, </h1></div>
+        <div class="header">
+            <h1>Welcome, </h1>
+        </div>
         <div class="icon">
-            <img src="nothing" alt="face icon">
+            <img src="/images/teacherLogo.png" alt="face icon">
+        <form action="/api/logout" method="POST">
+            <button type="submit">Logout</button>
+        </form>
         </div>
     </nav>
     <div class="marks-modification">
-        <button id="add-marks-btn">Add marks</button>
-        <button id="update-marks-btn">Update Marks</button>
-        <button id="delete-marks-btn">Delete Marks</button>
+        <button class="marks-button" id="add-marks-btn">Add marks</button>
+        <button class="marks-button" id="update-marks-btn">Update Marks</button>
+        <button class="marks-button" id="delete-marks-btn">Delete Marks</button>
     </div>
     <div id="marks-table">
         <div class="standard-btn">
@@ -47,7 +49,7 @@
                     <th>Obtained Marks</th>
                 </tr>
                 <tbody>
-                    
+
                 </tbody>
             </table>
         </div>

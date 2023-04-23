@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: rgb(184, 222, 255);
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10vh;
+}
+.form-box{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    margin-right: 50px;
+    background-color: white;
+    border-radius: 50px;
+    box-shadow: 0 0 30px black;
+}
+.form-box h1{
+    text-align: center;
+    margin-top: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+form{
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    min-width: 460px;
+    font-size: 23px;
+    margin: auto;
+    border-radius: 50px;
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+form input , form select{
+    font-family: Arial, Helvetica, sans-serif;
+    width: 300px;
+    font-size: 20px;
+    height: 27px;
+    border-radius: 4px;
+    border-style: solid;
+    padding-left: 3px;
+}
+form input:focus{
+    outline: none;
+}
+form label::after{
+    content: "*";
+    color: red;
+}
+.information{
+    margin-bottom: 18px;
+}
+.information label{
+    display: inline-block;
+    text-align: center;
+    width:140px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+form button{
+    width: 200px;
+    height: 35px;
+    margin: auto;
+    margin-top: 15px;
+    font-size: 25px;
+    border: none;
+    color: white;
+    outline: 4px solid rgb(93, 182, 255);
+    border-radius: 5px;
+    background-color: rgb(93, 182, 255);
+    transition: outline-offset 0.3s;
+}
+form button:is(:hover, :focus){
+    outline-offset: 3px;
+}
+.Instruction{
+    background-color: white;
+    width: 400px;
+    margin-top: 50px;
+    height: 250px;
+    padding:80px 20px 60px 30px;
+    border-radius: 50% 20% / 10% 30%;
+    align-items: center;
+    background-color: rgb(254, 213, 124);
+    font-family: Arial, Helvetica, sans-serif;
+}
+.Instruction h1{
+    text-align: center;
+    height: 50px;
+}
+.Instruction ul{
+    list-style-type: square;
+}
+ul li{
+    font-size: 18px;
+    margin: 10px 0px;
+}

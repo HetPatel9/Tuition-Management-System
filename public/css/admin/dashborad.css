@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+nav{
+    width: 100%;
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgb(164, 164, 164);
+}
+nav .header{
+    width: 70%;
+}
+.header h1{
+    width: inherit;
+    margin-left: 20px;
+}
+.icon{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    height: inherit;
+}
+.icon img{
+    height: inherit;
+    border-radius: 50%;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+form button{
+    height: 25px;
+    font-size: 20px;
+    width: 130px;
+    border: none;
+    background-color: rgb(139, 211, 255);
+}
+.marks-modification{
+    display: flex;
+    flex-direction: row;
+}
+.marks-button{
+    width: 150px;
+    height: 30px;  
+    border: none;
+    font-size: 20px;
+    color: white; 
+}
+#add-marks-btn{
+    background-color: green;
+}
+#update-marks-btn{
+    background-color: rgb(255, 255, 0);
+    color: black;
+}
+#delete-marks-btn{
+    background-color: red;
+}
