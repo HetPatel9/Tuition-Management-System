@@ -16,15 +16,18 @@
         </div>
         <div class="icon">
             <img src="/images/teacherLogo.png" alt="face icon">
-        <form action="/api/logout" method="POST">
-            <button type="submit">Logout</button>
-        </form>
+            <form action="/api/logout" method="POST">
+                <button type="submit">Logout</button>
+            </form>
         </div>
     </nav>
-    <div class="marks-modification">
-        <button class="marks-button" id="add-marks-btn">Add marks</button>
-        <button class="marks-button" id="update-marks-btn">Update Marks</button>
-        <button class="marks-button" id="delete-marks-btn">Delete Marks</button>
+    <div class="mark-modify-box">
+        <h1 class="mark-modify-title">Admin can alter marks</h1>
+        <div class="marks-modification">
+            <button class="marks-button" id="add-marks-btn">Add marks</button>
+            <button class="marks-button" id="update-marks-btn">Update Marks</button>
+            <button class="marks-button" id="delete-marks-btn">Delete Marks</button>
+        </div>
     </div>
     <div id="marks-table">
         <div class="standard-btn">
@@ -32,24 +35,57 @@
             <button id="9th-std" class="std-btn">9th</button>
             <button id="10th-std" class="std-btn">10th</button>
         </div>
-        <div>
-            <button id="Maths-btn" class="subject-btn">Maths</button>
-            <button id="Science-btn" class="subject-btn">Science</button>
-            <button id="English-btn" class="subject-btn">English</button>
-            <button id="Social-studies-btn" class="subject-btn">Social-Studies</button>
+        <div class="subject-btn">
+            <button id="Maths-btn" class="sub-btn">Maths</button>
+            <button id="Science-btn" class="sub-btn">Science</button>
+            <button id="English-btn" class="sub-btn">English</button>
+            <button id="Social-studies-btn" class="sub-btn">Social-Studies</button>
         </div>
         <div>
             <table>
-                <tr>
-                    <th>Student Id</th>
-                    <th>Standard</th>
-                    <th>Test Date</th>
-                    <th>Subject</th>
-                    <th>Total Marks</th>
-                    <th>Obtained Marks</th>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>Student Id</th>
+                        <th>Standard</th>
+                        <th>Test Date</th>
+                        <th>Subject</th>
+                        <th>Obtained Marks</th>
+                        <th>Total Marks</th>
+                    </tr>
+                </thead>
                 <tbody>
-
+                    <tr>
+                        <td>213243124</td>
+                        <td>10</td>
+                        <td>2023/02/21</td>
+                        <td>social studies</td>
+                        <td>100</td>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                        <td>213243124</td>
+                        <td>10</td>
+                        <td>2023/02/21</td>
+                        <td>social studies</td>
+                        <td>100</td>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                        <td>213243124</td>
+                        <td>10</td>
+                        <td>2023/02/21</td>
+                        <td>social studies</td>
+                        <td>100</td>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                        <td>213243124</td>
+                        <td>10</td>
+                        <td>2023/02/21</td>
+                        <td>social studies</td>
+                        <td>100</td>
+                        <td>100</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
