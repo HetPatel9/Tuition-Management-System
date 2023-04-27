@@ -5,28 +5,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Update Marks</title>
+    <title>Update Marks</title>
+    <link rel="stylesheet" href="/css/admin/result/update.css">
 </head>
 
 <body>
     <h1>Update Results Page</h1>
-    <div>
-        <form action="">
-            <label for="date">Date of Exam</label>
-            <input type="date" name="date" id="date">
-            <label for="standard">Standard</label>
-            <input type="number" name="standard" id="standard">
-            <label for="subject">Subject</label>
-            <input type="text" name="subject" id="subject">
-            <input type="submit">
+    <div class="form-box">
+        <form id="update-form" action="">
+            <div class="form-field">
+                <label for="date">Date of Exam</label>
+                <input type="date" name="date" id="date" required>
+            </div>
+            <div class="form-field">
+                <label for="standard">Standard</label>
+                <select name="standard" id="standard">
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+
+            </div>
+            <div class="form-field">
+                <label for="subject">Subject</label>
+                <select name="subject" id="subject">
+                    <option value="0">Maths</option>
+                    <option value="1">Science</option>
+                    <option value="2">English</option>
+                    <option value="3">Social Studies</option>
+                </select>
+            </div>
+            <button type="submit">Next</button>
         </form>
     </div>
     <div>
         <form action="">
             <label for="enrollNo">Enroll.No:</label>
-            <input type="number" name="enrollNo" id="enrollNo">
+            <input type="number" name="enrollNo" id="enrollNo" required>
             <label for="marks">Marks:</label>
-            <input type="number" name="marks" id="marks">
+            <input type="number" name="marks" id="marks" required>
             <input type="checkbox" name="absent" id="absent">
             <label for="absent">Is student absent in exam?</label>
             <button>Add</button>
