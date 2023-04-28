@@ -1,64 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add Marks</title>
-    <link rel="stylesheet" href="/css/admin/result/add.css">
-</head>
+    <link rel="stylesheet" href="/css/admin/result/add.css" />
+  </head>
 
-<body>
+  <body>
     <div id="exam-detail">
-        <form class="exam-form" action="">
-            <div class="general-detail-title"><h1>Add Test or Marks</h1></div>
-            <div class="general-detail">
-                <label for="date">Date of Exam</label>
-                <input type="date" name="date" id="date" required>
-            </div>
-            <div class="general-detail">
-                <label for="total-marks">Total Marks</label>
-                <input type="number" name="total-marks" id="total-marks" required>
-            </div>
-            <div class="general-detail">
-                <label for="standard">Standard</label>
-                <select name="standard" id="std">
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                </select>
-            </div>
-            <div class="general-detail">
-                <label for="subject">Subject</label>
-                <select name="subject" id="subject">
-                    <option value="0">Maths</option>
-                    <option value="1">Science</option>
-                    <option value="2">English</option>
-                    <option value="3">Social Studies</option>
-                </select>
-            </div>
-            <button type="submit">Next</button>
-        </form>
+      <form class="exam-form" action="">
+        <div class="general-detail-title"><h1>Add Test or Marks</h1></div>
+        <div class="general-detail">
+          <label for="date">Date of Exam</label>
+          <input type="date" name="date" id="date" required />
+        </div>
+        <div class="general-detail">
+          <label for="total-marks">Total Marks</label>
+          <input type="number" name="total-marks" id="total-marks" required />
+        </div>
+        <div class="general-detail">
+          <label for="standard">Standard</label>
+          <select name="standard" id="std">
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+        </div>
+        <div class="general-detail">
+          <label for="subject">Subject</label>
+          <select name="subject" id="subject">
+            <option value="0">Maths</option>
+            <option value="1">Science</option>
+            <option value="2">English</option>
+            <option value="3">Social Studies</option>
+          </select>
+        </div>
+        <button type="submit">Next</button>
+      </form>
     </div>
 
     <div id="marks-form">
-        <div class="marks-form-title"><h1>Enter Student's EnrollNo and Marks</h1></div>
-        <form class="student-marks-form" action="">
-            <div class="mark-field">
-                <label for="enrollNo">Enroll.No:</label>
-                <input type="number" name="enrollNo" id="enrollNo">
-            </div>
-            <div class="mark-field">
-                <label for="marks">Marks:</label>
-                <input type="number" name="marks" id="marks">
-            </div>
-            <div class="mark-field action-btn">
-                <button id="add-btn">Add</button>
-                <button id="complete-btn">Complete</button>
-            </div>
-        </form>
+      <div class="marks-form-title">
+        <h1>Enter Student's EnrollNo and Marks</h1>
+      </div>
+      <form class="student-marks-form" action="">
+        <div class="mark-field">
+          <label for="enrollNo">Enroll.No:</label>
+          <input type="number" name="enrollNo" id="enrollNo" />
+        </div>
+        <div class="mark-field">
+          <label for="marks">Marks:</label>
+          <input type="number" name="marks" id="marks" />
+        </div>
+        <div class="mark-field action-btn">
+          <button id="add-btn">Add</button>
+          <button id="complete-btn">Complete</button>
+        </div>
+      </form>
     </div>
-</body>
-
+  </body>
 </html>
