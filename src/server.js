@@ -5,6 +5,7 @@ const privateRouter = require('./routers/privateRouter');
 const authRouter = require('./routers/authRouter');
 const resultsRouter = require('./routers/resultsRouter');
 const { PUBLIC_DIR } = require('./utils/paths');
+const errorsHandler = require('./routers/errorsHandler');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -14,6 +15,7 @@ app.use(express.json());
 app.use(CookieParser());
 app.use(publicRouter, privateRouter);
 app.use('/api', authRouter, resultsRouter);
+app.use(errorsHandler);
 
 app.listen(PORT, () => {
     console.log(`Server is up on Port: ${PORT}`);
