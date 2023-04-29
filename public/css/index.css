@@ -2,6 +2,9 @@
   margin: 0;
   padding: 0;
 }
+/* body{
+  background-image: url('/images/background.png');
+} */
 nav {
   position: sticky;
   top: 0;
@@ -10,6 +13,7 @@ nav {
   align-items: center;
   display: flex;
 }
+
 nav button {
   width: 100px;
   height: 30px;
@@ -49,6 +53,7 @@ nav button a {
   justify-content: center;
   align-items: center;
   margin: auto;
+  z-index: 3;
 }
 .standard {
   width: 30%;
@@ -110,4 +115,15 @@ ul {
 }
 .topper-card table {
   margin: auto;
+}
+.teacher-info-container{
+  display: flex;
+  flex-direction: column;
+}
+.teacher-info{
+  display: flex;
+  width: 70%;
+}
+.teacher-info img{
+  width: 300px;
 }
