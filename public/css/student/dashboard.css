@@ -9,10 +9,16 @@ nav {
     flex-direction: row;
     align-items: center;
     height: 40px;
+    position: sticky;
+    top: 0;
     background-color: rgb(201, 201, 201);
 }
 body{
-    background-image: linear-gradient(to left, rgb(71, 243, 255) , rgb(204, 255, 156));
+    background-image: url('/images/student-dashboard-background.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center ;
+    background-attachment: fixed;
 }
 .header{
     width: 80%;
@@ -35,28 +41,44 @@ body{
     margin-bottom: 20px;
 }
 .sub-name{
-    font-size: 30px;
+    font-size: 27px;
+    color: white;
+    background-color: rgb(58, 58, 58);
+    padding: 5px 0px 5px 10px;
 }
 .mark-table table{
     width: 100%;
 }
 table th{
-    font-size:25px;
-    height: 30px;
+    font-size:23px;
+    height: 40px;
     min-width: 180px;
-    background-color: rgb(255, 255, 108);
+    background-color: rgb(172, 172, 172);
+    border-bottom: 1px solid rgb(192, 192, 192);
+}
+thead tr:hover{
+    background-color: rgb(172, 172, 172);
+    color: black;    
 }
 tr td{
     text-align: center;
     height: 25px;
     font-size: 20px;
+    padding: 5px 0;
+    border-bottom: 1px solid rgb(192, 192, 192);
 }
+
 tr:nth-child(odd){
-    background-color: rgb(253, 153, 208);
+    background-color: white;
 }
 tr:nth-child(even){
-    background-color: rgb(144, 198, 255);
+    background-color: whitesmoke;
 }
+tr:hover{
+    background-color: rgb(45, 45, 45);
+   color: white;
+}
+
 tbody{
     max-height:100px;
     overflow-y: auto;

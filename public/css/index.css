@@ -2,26 +2,46 @@
   margin: 0;
   padding: 0;
 }
+
 nav {
+  width: 100%;
   position: sticky;
   top: 0;
-  height: 36px;
-  background-color: rgb(255, 155, 155);
+  height: 38px;
+  background-color: rgb(158, 158, 158);
   align-items: center;
   display: flex;
 }
+html{
+  scroll-behavior: smooth;
+}
+nav .navigation{
+  display: flex;
+}
+.navigation a{
+  width: fit-content;
+  font-size: 25px;
+  margin-left: 10px;
+}
 nav button {
   width: 100px;
-  height: 30px;
+  height: 38px;
   font-size: 20px;
   border: none;
   border-radius: 5px;
   margin-left: 10px;
-  background-color: rgb(157, 255, 157);
+  float: right;
+  background-color: rgb(66, 101, 255);
+}
+nav button:hover{
+  background-color: rgb(18, 61, 255);
+}
+nav button a:hover{
+  color: black;
 }
 nav button a {
   text-decoration: none;
-  color: black;
+  color: whitesmoke;
 }
 .admission-ads {
   display: flex;
@@ -49,6 +69,7 @@ nav button a {
   justify-content: center;
   align-items: center;
   margin: auto;
+  z-index: 3;
 }
 .standard {
   width: 30%;
@@ -81,7 +102,6 @@ ul {
   justify-content: center;
   width: 50%;
   margin: auto;
-  /* border: 2px solid red; */
   align-items: center;
 }
 #slide-result button {
@@ -94,10 +114,7 @@ ul {
   flex-direction: row;
   width: 70%;
   margin: 10px;
-  /* margin-top: 10px;
-    margin-bottom: 10px; */
   overflow-x: hidden;
-  /* border: 2px solid green; */
 }
 .topper-card {
   min-width: 45%;
@@ -110,4 +127,15 @@ ul {
 }
 .topper-card table {
   margin: auto;
+}
+.teacher-info-container{
+  display: flex;
+  flex-direction: column;
+}
+.teacher-info{
+  display: flex;
+  width: 70%;
+}
+.teacher-info img{
+  width: 300px;
 }

@@ -3,7 +3,9 @@
     padding: 0;
 }
 body{
-    background-color: rgb(184, 222, 255);
+    background-image: url('/images/signup-background.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 .container{
     display: flex;
@@ -46,7 +48,7 @@ form input , form select{
     padding-left: 3px;
 }
 form input:focus{
-    outline: none;
+    outline: 3px solid rgb(146, 204, 255);
 }
 form label::after{
     content: "*";
@@ -103,3 +105,4 @@ ul li{
     font-size: 18px;
     margin: 10px 0px;
 }
+

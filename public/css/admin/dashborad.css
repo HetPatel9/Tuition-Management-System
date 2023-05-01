@@ -1,6 +1,14 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background-image: url('/images/admin-dashboard-background.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center ;
+    background-attachment: fixed;
 }
 nav{
     width: 100%;
@@ -8,6 +16,8 @@ nav{
     display: flex;
     flex-direction: row;
     align-items: center;
+    position: sticky;
+    top: 0;
     background-color: rgb(164, 164, 164);
 }
 nav .header{
@@ -31,11 +41,18 @@ nav .header{
     margin-right: 20px;
 }
 form button{
-    height: 25px;
-    font-size: 20px;
+    height: 35px;
+    font-size: 22px;
     width: 130px;
     border: none;
-    background-color: rgb(139, 211, 255);
+    border-radius: 10px;
+    color: whitesmoke;
+    margin-right: 10px;
+    background-color: rgb(255, 0, 0);
+}
+form button:hover{
+    background-color: rgb(255, 112, 112);
+    color: black;
 }
 .marks-modification{
     display: flex;
@@ -69,15 +86,27 @@ form button{
 #delete-marks-btn{
     background-color: rgb(255, 110, 134);
 }
+#add-marks-btn:hover{
+    background-color: rgb(29, 255, 78);
+}
+#update-marks-btn:hover{
+    background-color: rgb(54, 174, 255);
+}
+#delete-marks-btn:hover{
+    background-color: rgb(255, 73, 103);
+}
 .standard-btn button{
     min-width: 100px;
     height: 30px;
     font-size: 20px;
     border: none;
-    background-color: rgb(255, 157, 234);
+    background-color:rgb(255, 81, 217);
     margin-bottom: 10px;
     border-radius: 5px;
     margin-right: 10px;
+}
+.standard-btn button:hover{
+    background-color: rgb(255, 19, 204);
 }
 .subject-btn button{
     min-width: 200px;
@@ -87,12 +116,15 @@ form button{
     border-radius: 5px;
     margin-bottom: 10px;
     margin-right: 10px;
-    background-color: rgb(157, 183, 255);
+    background-color: rgb(109, 148, 255);
+}
+.subject-btn button:hover{
+    background-color: rgb(69, 119, 255);
+
 }
 #marks-table{
     width: 1000px;
     margin: auto;
-    /* border: 2px solid red; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -104,22 +136,23 @@ form button{
 thead th{
     font-size: 20px;
     width: 160px;
-    padding: 5px 0px;
+    padding: 8px 0px;
     background-color: rgb(90, 90, 90);
     color: white;
 }
 tbody td{
     text-align: center;
     font-size: 18px;
-    padding: 3px 0;
+    padding: 5px 0;
+    border-bottom: 1px solid rgb(145, 145, 145);
 }
 tbody tr:nth-child(odd){
-    background-color: rgb(218, 218, 218);
+    background-color: white;
 }
 tbody tr:nth-child(even){
-    background-color: rgb(184, 184, 184);
+    background-color: rgb(234, 234, 234)
 }
 tbody tr:hover{
-    background-color: rgb(124, 124, 124);
+    background-color: rgb(122, 122, 122);
     color: white;
 }
