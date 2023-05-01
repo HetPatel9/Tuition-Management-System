@@ -30,7 +30,7 @@ nav .navigation {
 .navigation a {
   width: fit-content;
   color: whitesmoke;
-  padding: 4px 15px 5px 15px;
+  padding: 4px 15px 6px 15px;
   text-decoration-line: none;
   text-align: center;
   font-size: 25px;
@@ -67,12 +67,38 @@ nav a {
 #Institute-info {
   height: 100vh;
 }
-#faculty {
+
+#scholar {
   height: 100vh;
 }
-#scollar {
+/* Home page css */
+#Home{
   height: 100vh;
+  padding-top: 100px;
 }
+.welcome-page{
+  width: 70%;
+  margin: auto;
+  background-color: rgb(217, 217, 217);
+  display: flex;
+  border-radius: 70px;
+  flex-direction: row;
+  padding: 50px;
+  align-items: center;
+}
+.welcome-page img{
+  width: 500px;
+  height: fit-content;
+  mix-blend-mode: darken;
+}
+.welcome-text h2{
+  margin-top: 15px;
+}
+.welcome-text{
+  margin-left: 30px;
+  padding-top: 40px;
+}
+/* about us part css */
 .admission-ads {
   display: flex;
   flex-direction: column;
@@ -116,16 +142,18 @@ nav a {
   font-size: 20px;
   text-align: center;
   text-decoration: none;
-  color: rgb(252, 65, 162);
+  color: rgb(65, 252, 96);
 }
 ul {
   list-style-type: none;
   margin: 10px 0px;
 }
-.Scollar {
+
+/* scholar part css */
+.Scholar {
   padding-top: 10vh;
 }
-.Scollar h1 {
+.Scholar h1 {
   width: 100%;
   text-align: center;
   font-size: 50px;
@@ -134,26 +162,44 @@ ul {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: 50%;
+  width: 60%;
   margin: auto;
+  margin-top: 5vh;
   align-items: center;
 }
 #slide-result button {
-  width: 30px;
-  height: 80px;
+  width: 60px;
+  height: 100px;
+  border: none;
+  border-radius: 30px;
   font-size: 40px;
+  color:whitesmoke;
+  background-color: rgb(77, 77, 77);
+}
+#slide-result button:hover{
+  background-color: rgb(227, 227, 227);
+  color: black;
 }
 .results {
   display: flex;
   flex-direction: row;
-  width: 70%;
+  width: 90%;
   margin: 10px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-radius: 30px;
+  background-color: rgb(77, 77, 77);
   overflow-x: hidden;
 }
 .topper-card {
-  min-width: 45%;
-  margin-right: 2.5%;
-  margin-left: 2.5%;
+  min-width: 40%;
+  margin-right: 5%;
+  margin-left: 5%;
+}
+.topper-card h2{
+  text-align: center;
+  margin-bottom: 10px;
+  color: whitesmoke;
 }
 .topper-card img {
   width: 100%;
@@ -161,15 +207,57 @@ ul {
 }
 .topper-card table {
   margin: auto;
+  color: white;
 }
+.topper-card table thead th{
+  font-size: 18px;
+}
+.topper-card table tbody td{
+  text-align: center;
+}
+
+/* faculty part */
 .teacher-info-container {
+  width: 70%;
+  margin: auto;
+  padding-top: 40px;
   display: flex;
+  justify-content: center;
   flex-direction: column;
 }
 .teacher-info {
   display: flex;
-  width: 70%;
+  margin: auto;
+  margin-top: 30px;
+  align-items: center;
 }
 .teacher-info img {
   width: 300px;
+}
+
+.personal-detail table{
+  color: white;
+  border-radius: 20px;
+  background-color: rgb(88, 88, 88);
+}
+.personal-detail table th{
+  font-size: 20px;
+  margin-top:5px;
+  padding: 5px;
+  width: 200px;
+}
+.personal-detail table td{
+  font-size: 18px;
+  padding: 2px;
+  margin-top:5px;
+  width: 250px;
+}
+.teacher-info:nth-child(even){
+  flex-direction: row-reverse;
+}
+.teacher-info:nth-child(even) .personal-detail{
+  margin-right: 30px;
+}
+.teacher-info:nth-child(odd) .personal-detail{
+  margin-left: 30px;
 }
