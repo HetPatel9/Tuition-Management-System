@@ -31,3 +31,12 @@ rightArrow.addEventListener('click', () => {
         })
     }
 });
+
+let links = document.querySelectorAll('a');
+links.forEach((link) => {
+    link.addEventListener('click', function () {
+        const linkName = document.querySelector('.activeLink');
+        linkName.classList.remove('activeLink');
+        link.classList.add('activeLink');
+    })
+});

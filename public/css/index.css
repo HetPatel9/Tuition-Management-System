@@ -1,27 +1,48 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
-
+body {
+  background-color: rgb(134, 134, 134);
+}
 nav {
   width: 100%;
   position: sticky;
   top: 0;
   height: 38px;
-  background-color: rgb(158, 158, 158);
+  background-color: rgb(90, 90, 90);
   align-items: center;
   display: flex;
+  flex-direction: row;
 }
-html{
+html {
   scroll-behavior: smooth;
 }
-nav .navigation{
+nav .navigation {
   display: flex;
+  width: 40%;
 }
-.navigation a{
+.navigation .activeLink {
+  background-color: rgb(134, 134, 134);
+  color: black;
+}
+.navigation a {
   width: fit-content;
+  color: whitesmoke;
+  padding: 4px 15px 5px 15px;
+  text-decoration-line: none;
+  text-align: center;
   font-size: 25px;
-  margin-left: 10px;
+  background-color: rgb(90, 90, 90);
+}
+.navigation a:hover {
+  background-color: rgb(121, 121, 121);
+}
+nav .buttons {
+  justify-content: flex-end;
+  width: 60%;
+  padding-right: 20px;
 }
 nav button {
   width: 100px;
@@ -33,20 +54,30 @@ nav button {
   float: right;
   background-color: rgb(66, 101, 255);
 }
-nav button:hover{
+nav button:hover {
   background-color: rgb(18, 61, 255);
 }
-nav button a:hover{
+nav button a:hover {
   color: black;
 }
-nav button a {
+nav a {
   text-decoration: none;
   color: whitesmoke;
+}
+#Institute-info {
+  height: 100vh;
+}
+#faculty {
+  height: 100vh;
+}
+#scollar {
+  height: 100vh;
 }
 .admission-ads {
   display: flex;
   flex-direction: column;
   width: 100%;
+  padding-top: 100px;
 }
 .admission-ads h1,
 .admission-ads h2 {
@@ -63,7 +94,7 @@ nav button a {
   font-size: 40px;
 }
 .information {
-  width: 90%;
+  width: 830px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -90,6 +121,9 @@ nav button a {
 ul {
   list-style-type: none;
   margin: 10px 0px;
+}
+.Scollar {
+  padding-top: 10vh;
 }
 .Scollar h1 {
   width: 100%;
@@ -128,14 +162,14 @@ ul {
 .topper-card table {
   margin: auto;
 }
-.teacher-info-container{
+.teacher-info-container {
   display: flex;
   flex-direction: column;
 }
-.teacher-info{
+.teacher-info {
   display: flex;
   width: 70%;
 }
-.teacher-info img{
+.teacher-info img {
   width: 300px;
 }
