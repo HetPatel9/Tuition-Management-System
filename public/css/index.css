@@ -72,11 +72,11 @@ nav a {
   height: 100vh;
 }
 /* Home page css */
-#Home{
+#Home {
   height: 100vh;
   padding-top: 100px;
 }
-.welcome-page{
+.welcome-page {
   width: 70%;
   margin: auto;
   background-color: rgb(217, 217, 217);
@@ -86,67 +86,17 @@ nav a {
   padding: 50px;
   align-items: center;
 }
-.welcome-page img{
+.welcome-page img {
   width: 500px;
   height: fit-content;
   mix-blend-mode: darken;
 }
-.welcome-text h2{
+.welcome-text h2 {
   margin-top: 15px;
 }
-.welcome-text{
+.welcome-text {
   margin-left: 30px;
   padding-top: 40px;
-}
-/* about us part css */
-.admission-ads {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  padding-top: 100px;
-}
-.admission-ads h1,
-.admission-ads h2 {
-  text-align: center;
-  width: 50%;
-  margin: auto;
-}
-.admission-ads h1 {
-  font-size: 50px;
-  color: rgb(33, 194, 239);
-}
-.admission-ads h2 {
-  color: rgb(60, 245, 125);
-  font-size: 40px;
-}
-.information {
-  width: 830px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  z-index: 3;
-}
-.standard {
-  width: 30%;
-  margin: auto;
-  margin-top: 20px;
-}
-.standard h1 {
-  font-size: 40px;
-  color: greenyellow;
-  text-align: center;
-}
-.standard li {
-  font-size: 20px;
-  text-align: center;
-  text-decoration: none;
-  color: rgb(65, 252, 96);
-}
-ul {
-  list-style-type: none;
-  margin: 10px 0px;
 }
 
 /* scholar part css */
@@ -173,10 +123,10 @@ ul {
   border: none;
   border-radius: 30px;
   font-size: 40px;
-  color:whitesmoke;
+  color: whitesmoke;
   background-color: rgb(77, 77, 77);
 }
-#slide-result button:hover{
+#slide-result button:hover {
   background-color: rgb(227, 227, 227);
   color: black;
 }
@@ -196,7 +146,7 @@ ul {
   margin-right: 5%;
   margin-left: 5%;
 }
-.topper-card h2{
+.topper-card h2 {
   text-align: center;
   margin-bottom: 10px;
   color: whitesmoke;
@@ -209,10 +159,10 @@ ul {
   margin: auto;
   color: white;
 }
-.topper-card table thead th{
+.topper-card table thead th {
   font-size: 18px;
 }
-.topper-card table tbody td{
+.topper-card table tbody td {
   text-align: center;
 }
 
@@ -235,29 +185,118 @@ ul {
   width: 300px;
 }
 
-.personal-detail table{
+.personal-detail table {
   color: white;
   border-radius: 20px;
   background-color: rgb(88, 88, 88);
 }
-.personal-detail table th{
+.personal-detail table th {
   font-size: 20px;
-  margin-top:5px;
+  margin-top: 5px;
   padding: 5px;
   width: 200px;
 }
-.personal-detail table td{
+.personal-detail table td {
   font-size: 18px;
   padding: 2px;
-  margin-top:5px;
+  margin-top: 5px;
   width: 250px;
 }
-.teacher-info:nth-child(even){
+.teacher-info:nth-child(even) {
   flex-direction: row-reverse;
 }
-.teacher-info:nth-child(even) .personal-detail{
+.teacher-info:nth-child(even) .personal-detail {
   margin-right: 30px;
 }
-.teacher-info:nth-child(odd) .personal-detail{
+.teacher-info:nth-child(odd) .personal-detail {
   margin-left: 30px;
+}
+
+/* About us part */
+#About-us {
+  height: 100vh;
+}
+.admission-ads {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 100px;
+}
+.admission-ads h1,
+.admission-ads h2 {
+  text-align: center;
+  width: 50%;
+  margin: auto;
+}
+.admission-ads h1 {
+  font-size: 50px;
+  color: rgb(255, 255, 255);
+  border: 2px solid black;
+  box-shadow: 0 0 20px black;
+  margin-bottom: 20px;
+  width: 600px;
+}
+.admission-ads h2 {
+  color: rgb(24, 24, 24);
+  font-size: 40px;
+}
+.information {
+  width: 830px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 20px;
+  border-radius: 20px;
+  z-index: 3;
+  padding: 20px;
+  background-color: rgb(46, 46, 46);
+}
+.standard {
+  width: 30%;
+  margin: auto;
+  margin-top: 20px;
+}
+.standard h1 {
+  font-size: 40px;
+  color: greenyellow;
+  text-align: center;
+}
+.standard li {
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+  color: rgb(240, 240, 240);
+}
+ul {
+  list-style-type: none;
+  margin: 10px 0px;
+}
+.contact {
+  width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  border-radius: 20px;
+  background-color: rgb(209, 209, 209);
+}
+.contact h1 {
+  text-align: center;
+  margin: 10px 0;
+}
+.contact table {
+  width: fit-content;
+  margin: auto;
+  padding: 10px;
+}
+.contact table th {
+  font-size: 22px;
+  padding: 5px;
+  width: 200px;
+}
+.contact table td {
+  padding: 10px;
+  font-size: 20px;
 }
