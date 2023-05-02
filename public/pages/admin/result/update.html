@@ -12,7 +12,7 @@
 
 <body>
     <div class="form-box">
-        <form id="update-form" action="">
+        <form id="update-form">
             <div class="title">
                 <h1>Update marks</h1>
             </div>
@@ -21,8 +21,8 @@
                 <input type="date" name="date" id="date" required>
             </div>
             <div class="form-field">
-                <label for="standard">Standard</label>
-                <select name="standard" id="standard">
+                <label for="std">Standard</label>
+                <select name="std" id="std">
                     <option value="8">8</option>
                     <option value="9">9</option>
                     <option value="10">10</option>
@@ -42,21 +42,21 @@
         </form>
     </div>
     <div class="student-update-marks">
-        <form id="data-form" action="">
+        <form id="data-form">
             <div class="student-data">
-                <label for="enrollNo">Enroll.No:</label>
-                <input type="number" name="enrollNo" id="enrollNo" required>
+                <label for="enrolNo">Enroll.No:</label>
+                <input type="number" name="enrolNo" id="enrolNo" required>
             </div>
             <div class="student-data">
                 <label for="marks">Marks:</label>
-                <input type="number" name="marks" id="marks" required>
+                <input type="number" name="marks" id="marks">
             </div>
             <div class="presence">
                 <input type="checkbox" name="absent" id="absent">
                 <label for="absent">Is student absent in exam?</label>
             </div>
             <div class="btn">
-                <button class="add-btn">Add</button>
+                <button type="submit" class="add-btn">Add</button>
                 <button class="complete-btn">Complete</button>
             </div>
         </form>

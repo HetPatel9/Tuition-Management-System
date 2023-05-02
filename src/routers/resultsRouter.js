@@ -112,11 +112,17 @@ router.post('/test', firewall, async (req, res, next) => {
             subject
         } = req.body;
 
-        const test = await prisma.test.findFirst({
+        if (moment(date, 'YYYY-MM-DD', true).isValid()) {
+            date = new Date(moment(date, 'YYYY-MM-DD').toISOString());
+        }
+
+        const test = await prisma.test.findUnique({
             where: {
-                date,
-                std: STANDARD[std],
-                subject: SUBJECT[subject]
+                'test_unique_key': {
+                    date,
+                    std: STANDARD[std],
+                    subject: SUBJECT[subject]
+                }
             }
         });
 
@@ -189,6 +195,10 @@ router.delete('/test/delete', firewall, async (req, res, next) => {
             subject
         } = req.body;
 
+        if (moment(date, 'YYYY-MM-DD', true).isValid()) {
+            date = new Date(moment(date, 'YYYY-MM-DD').toISOString());
+        }
+
         await prisma.test.delete({
             where: {
                 test_unique_key: {
@@ -199,7 +209,7 @@ router.delete('/test/delete', firewall, async (req, res, next) => {
             }
         });
 
-        return res.send({ message: 'Success' });
+        return res.redirect(302, '/dashboard');
     } catch (err) {
         console.error(err);
         next(new CustomError());
@@ -259,7 +269,7 @@ router.put('/results/update', firewall, async (req, res, next) => {
         }));
 
         await prisma.$transaction(updateQuery);
-        return res.send({ message: 'Success' });
+        return res.redirect(302, '/dashboard');
     } catch (err) {
         console.error(err);
         next(new CustomError());
@@ -268,21 +278,34 @@ router.put('/results/update', firewall, async (req, res, next) => {
 
 router.delete('/results/delete', firewall, async (req, res, next) => {
     try {
-
         if (!req.user.isAdmin) return res.sendFile(PAGE_NOT_FOUND);
 
-        const { test: { id }, students } = req.body;
+        let { test: { date, std, subject }, students } = req.body;
+
+        if (moment(date, 'YYYY-MM-DD', true).isValid()) {
+            date = new Date(moment(date, 'YYYY-MM-DD').toISOString());
+        }
+
+        const test = await prisma.test.findUnique({
+            where: {
+                'test_unique_key': {
+                    date,
+                    std: STANDARD[std],
+                    subject: SUBJECT[subject]
+                }
+            }
+        });
 
         await prisma.result.deleteMany({
             where: {
                 OR: students.map(student => ({
                     enrolNo: student
                 })),
-                testId: id
+                testId: test.id
             }
         });
 
-        return res.send({ message: 'Success' });
+        return res.redirect(302, '/dashboard');
     } catch (err) {
         console.error(err);
         next(new CustomError());

@@ -9,6 +9,9 @@ body{
   background-repeat: no-repeat;
   background-size: 100%;
 }
+#textareabox {
+  display: none;
+}
 #delete-box {
   width: 420px;
   margin: auto;

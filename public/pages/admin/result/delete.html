@@ -15,14 +15,14 @@
     <div class="title">
       <h1>Delete Test result</h1>
     </div>
-    <form action="" class="delete-form">
+    <form class="delete-form">
       <div class="form-field box">
         <label for="date">Date of Exam</label>
         <input type="date" name="date" id="date" />
       </div>
       <div class="form-field box">
-        <label for="standard">Standard</label>
-        <select name="standard" id="standard">
+        <label for="std">Standard</label>
+        <select name="std" id="std">
           <option value="8">8</option>
           <option value="9">9</option>
           <option value="10">10</option>
@@ -39,16 +39,15 @@
       </div>
       <div class="delete-record box">
         <input type="checkbox" name="rec-dlt" id="rec-dlt" />
-        <label for="rec-dlt">Delete record only?</label>
+        <label for="rec-dlt">Delete records only?</label>
       </div>
-      <div class="form-field box">
-        <textarea name="enrollNos" form="delete-table" id="enrollNos" cols="30" rows="6"></textarea>
+      <div id="textareabox" class="form-field box">
+        <textarea name="students" id="students" cols="30" rows="6"></textarea>
         <ul>
           <li>
-            Please enter enroll no of students in textarea whom marks you want
-            to delete
+            Please enter "Enroll No" of students in textarea whose marks you want to delete.
           </li>
-          <li>Use ',' to saperate student enrollNo</li>
+          <li>Use ',' to saperate student Enroll No.</li>
         </ul>
       </div>
       <div class="btn box">
