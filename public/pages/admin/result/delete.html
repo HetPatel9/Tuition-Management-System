@@ -1,64 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Delete marks</title>
-    <link rel="stylesheet" href="/css/admin/result/delete.css" />
-  </head>
 
-  <body>
-    <div id="delete-box">
-      <div class="title">
-        <h1>Delete Test result</h1>
-      </div>
-      <form action="" class="delete-form">
-        <div class="form-field box">
-          <label for="date">Date of Exam</label>
-          <input type="date" name="date" id="date" />
-        </div>
-        <div class="form-field box">
-          <label for="standard">Standard</label>
-          <select name="standard" id="standard">
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-          </select>
-        </div>
-        <div class="form-field box">
-          <label for="subject">Subject</label>
-          <select name="subject" id="subject">
-            <option value="0">Maths</option>
-            <option value="1">Science</option>
-            <option value="2">English</option>
-            <option value="3">Social Studies</option>
-          </select>
-        </div>
-        <div class="delete-record box">
-          <input type="checkbox" name="rec-dlt" id="rec-dlt" />
-          <label for="rec-dlt">Delete record only?</label>
-        </div>
-        <div class="form-field box">
-          <textarea
-            name="enrollNos"
-            form="delete-table"
-            id="enrollNos"
-            cols="30"
-            rows="6"
-          ></textarea>
-          <ul>
-            <li>
-              Please enter enroll no of students in textarea whom marks you want
-              to delete
-            </li>
-            <li>Use ',' to saperate student enrollNo</li>
-          </ul>
-        </div>
-        <div class="btn box">
-          <button type="submit">Delete</button>
-        </div>
-      </form>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delete marks</title>
+  <script src="/js/admin/result/delete.js" defer></script>
+  <link rel="stylesheet" href="/css/admin/result/delete.css" />
+</head>
+
+<body>
+  <div id="delete-box">
+    <div class="title">
+      <h1>Delete Test result</h1>
     </div>
-  </body>
+    <form action="" class="delete-form">
+      <div class="form-field box">
+        <label for="date">Date of Exam</label>
+        <input type="date" name="date" id="date" />
+      </div>
+      <div class="form-field box">
+        <label for="standard">Standard</label>
+        <select name="standard" id="standard">
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      </div>
+      <div class="form-field box">
+        <label for="subject">Subject</label>
+        <select name="subject" id="subject">
+          <option value="0">Maths</option>
+          <option value="1">Science</option>
+          <option value="2">English</option>
+          <option value="3">Social Studies</option>
+        </select>
+      </div>
+      <div class="delete-record box">
+        <input type="checkbox" name="rec-dlt" id="rec-dlt" />
+        <label for="rec-dlt">Delete record only?</label>
+      </div>
+      <div class="form-field box">
+        <textarea name="enrollNos" form="delete-table" id="enrollNos" cols="30" rows="6"></textarea>
+        <ul>
+          <li>
+            Please enter enroll no of students in textarea whom marks you want
+            to delete
+          </li>
+          <li>Use ',' to saperate student enrollNo</li>
+        </ul>
+      </div>
+      <div class="btn box">
+        <button type="submit">Delete</button>
+      </div>
+    </form>
+  </div>
+</body>
+
 </html>

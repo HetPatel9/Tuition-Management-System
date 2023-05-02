@@ -16,12 +16,12 @@
             <h1>Registration Form</h1>
             <form action="/api/register" method="POST" enctype="application/x-www-form-urlencoded">
                 <div class="information">
-                    <label for="fname">First Name:</label>
-                    <input type="text" name="fname" id="fname" required>
+                    <label for="firstName">First Name:</label>
+                    <input type="text" name="firstName" id="firstName" required>
                 </div>
                 <div class="information">
-                    <label for="lname">Last Name:</label>
-                    <input type="text" name="lname" id="lname" required>
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" name="lastName" id="lastName" required>
                 </div>
                 <div class="information">
                     <label for="email">Email:</label>
@@ -32,7 +32,7 @@
                     <input type="password" name="password" minlength="8" id="password" required>
                 </div>
                 <div class="information">
-                    <label for="standard">Standard:</label>
+                    <label for="std">Standard:</label>
                     <select id="std" name="std">
                         <option value="8"> 8th</option>
                         <option value="9"> 9th</option>
@@ -44,8 +44,8 @@
                     <input type="number" name="enrolNo" id="enrolNo" maxlength="10" required>
                 </div>
                 <div class="information">
-                    <label for="phNo">Phone No:</label>
-                    <input type="number" name="phNo" id="phNo" maxlength="10" required>
+                    <label for="phoneNo">Phone No:</label>
+                    <input type="number" name="phoneNo" id="phoneNo" maxlength="10" required>
                 </div>
                 <button type="submit">Sign Up</button>
             </form>

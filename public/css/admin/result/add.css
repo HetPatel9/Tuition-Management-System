@@ -1,23 +1,27 @@
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
 }
-body{
+
+body {
     background-image: url('/images/add-delete-update-bgimage.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
 }
-#exam-detail{
+
+#exam-detail {
     width: 50%;
     margin: auto;
 }
+
 .general-detail-title {
     text-align: center;
     margin: 10px 0;
 }
-.exam-form{
+
+.exam-form {
     display: flex;
     flex-direction: column;
     width: 380px;
@@ -27,20 +31,24 @@ body{
     border-radius: 40px;
     background-color: white;
 }
-.exam-form input, .exam-form select{
+
+.exam-form input,
+.exam-form select {
     display: inline-block;
     width: 200px;
     font-size: 18px;
     margin: 5px 0;
 }
-.exam-form label{
+
+.exam-form label {
     display: inline-block;
     width: 130px;
     text-align: right;
     margin: 5px 15px 5px 0px;
     font-size: 20px;
 }
-.exam-form button{
+
+.exam-form button {
     width: 150px;
     font-size: 20px;
     height: 26px;
@@ -52,15 +60,19 @@ body{
     margin-top: 10px;
     margin-bottom: 10px;
 }
-.exam-form button:hover{
+
+.exam-form button:hover {
     background-color: rgb(0, 0, 181);
 }
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
-#marks-form{
+
+#marks-form {
+    display: none;
     width: 580px;
     margin: auto;
     margin-top: 50px;
@@ -68,55 +80,65 @@ input::-webkit-inner-spin-button {
     padding: 20px;
     background-color: white;
 }
-.marks-form-title{
+
+.marks-form-title {
     text-align: center;
     margin: 10px 0;
 }
-.student-marks-form{
+
+.student-marks-form {
     display: flex;
     flex-direction: column;
     width: 380px;
     margin: auto;
     margin-top: 15px;
 }
-.mark-field label{
+
+.mark-field label {
     display: inline-block;
     width: 120px;
     text-align: right;
     margin: 5px 15px 5px 0px;
     font-size: 20px;
 }
-.mark-field input{
+
+.mark-field input {
     display: inline-block;
     width: 200px;
     font-size: 18px;
     margin: 5px 0;
 }
-.action-btn button{
+
+.action-btn button {
     margin-top: 10px;
     width: 130px;
     height: 30px;
     font-size: 20px;
 }
-#add-btn{
+
+#add-btn {
     background-color: green;
     border: none;
     color: white;
     border-radius: 5px;
 }
-#add-btn:hover{
-    background-color:rgb(0, 220, 0) ;
+
+#add-btn:hover {
+    background-color: rgb(0, 220, 0);
 }
-#complete-btn{
+
+#complete-btn {
     background-color: rgb(103, 103, 103);
     border: none;
     color: white;
     border-radius: 5px;
 }
-#complete-btn:hover{
+
+#complete-btn:hover {
     background-color: rgb(161, 161, 161);
 }
-.action-btn{
+
+.action-btn {
     display: flex;
     justify-content: space-evenly;
     margin-bottom: 5px;

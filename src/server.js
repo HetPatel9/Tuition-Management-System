@@ -9,7 +9,13 @@ const errorsHandler = require('./routers/errorsHandler');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-app.use(express.static(PUBLIC_DIR));
+app.use(express.static(PUBLIC_DIR, {
+    index: false,
+    setHeaders: (res, path) => {
+        if (path.endsWith('.html')) return false;
+        res.setHeader('Cache-Control', 'public, max-age=0');
+    }
+}));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(CookieParser());

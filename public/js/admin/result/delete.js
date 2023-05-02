@@ -1,0 +1,5 @@
+async function INIT() {
+
+}
+
+INIT();

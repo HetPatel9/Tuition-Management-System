@@ -1,4 +1,5 @@
 const { Router } = require('express');
+const moment = require('moment');
 const firewall = require('./firewall');
 const prisma = require('../prisma');
 const { PAGE_NOT_FOUND } = require('../utils/paths');
@@ -25,7 +26,27 @@ router.get('/results', firewall, async (req, res, next) => {
             else query.where.test = { std: STANDARD[std] };
         }
 
-        const results = await prisma.result.findMany(query);
+        let results = await prisma.result.findMany({
+            ...query,
+            orderBy: {
+                enrolNo: 'asc'
+            },
+            include: {
+                test: {
+                    select: {
+                        date: true,
+                        total: true
+                    }
+                }
+            }
+        });
+
+        results = results.map(result => ({
+            studentId: result.enrolNo,
+            marks: result.marks,
+            date: moment(result.test.date).format('DD/MM/YYYY'),
+            total: result.test.total
+        }));
 
         return res.send({ message: 'Success', data: results });
     } catch (err) {
@@ -59,7 +80,7 @@ router.get('/student/results', firewall, async (req, res, next) => {
 
         student.results.forEach(result => {
             const temp = {
-                date: result.test.date,
+                date: moment(result.test.date).format('DD/MM/YYYY'),
                 total: result.test.total,
                 status: result.status
             };
@@ -125,6 +146,12 @@ router.post('/test/add', firewall, async (req, res, next) => {
             total
         } = req.body;
 
+        console.log(req.body);
+
+        if (moment(date, 'YYYY-MM-DD', true).isValid()) {
+            date = moment(date, 'YYYY-MM-DD').toISOString();
+        }
+
         const test = await prisma.test.create({
             data: {
                 date,
@@ -152,7 +179,7 @@ router.post('/test/add', firewall, async (req, res, next) => {
 });
 
 
-router.delete('/test/delete', firewall, async (req, res) => {
+router.delete('/test/delete', firewall, async (req, res, next) => {
     try {
         if (!req.user.isAdmin) return res.sendFile(PAGE_NOT_FOUND);
 
@@ -201,16 +228,18 @@ router.post('/results/add', firewall, async (req, res, next) => {
             return temp;
         });
 
+        console.log(data);
+
         await prisma.result.createMany({ data });
 
-        return res.send({ message: 'Success' });
+        return res.redirect(302, '/dashboard');
     } catch (err) {
         console.error(err);
         next(new CustomError());
     }
 });
 
-router.put('/results/update', firewall, async (req, res) => {
+router.put('/results/update', firewall, async (req, res, next) => {
     try {
         if (!req.user.isAdmin) return res.sendFile(PAGE_NOT_FOUND);
 
@@ -237,7 +266,7 @@ router.put('/results/update', firewall, async (req, res) => {
     }
 });
 
-router.delete('/results/delete', firewall, async (req, res) => {
+router.delete('/results/delete', firewall, async (req, res, next) => {
     try {
 
         if (!req.user.isAdmin) return res.sendFile(PAGE_NOT_FOUND);

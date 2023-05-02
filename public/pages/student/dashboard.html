@@ -12,16 +12,17 @@
 
 <body background="fixed">
     <nav>
-        <div class="header">
-            <h1>Welcome, </h1>
-        </div>
+        <div class="header"></div>
         <div class="icon">
             <img src="/images/studentlogo.png" alt="face icon">
         </div>
     </nav>
+    <form action="/api/logout" method="POST">
+        <button type="submit">Logout</button>
+    </form>
     <div class="mark-table">
         <div class="sub-name">Subject: Maths</div>
-        <table cellspacing="0">
+        <table cellspacing="0" class="resultstable" id="maths">
             <thead>
                 <tr>
                     <th>Exam Date</th>
@@ -29,33 +30,12 @@
                     <th>Obtain Marks</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>11/02/2022</td>
-                    <td>100</td>
-                    <td>73</td>
-                </tr>
-                <tr>
-                    <td>15/02/2022</td>
-                    <td>50</td>
-                    <td>33</td>
-                </tr>
-                <tr>
-                    <td>02/02/2022</td>
-                    <td>80</td>
-                    <td>60</td>
-                </tr>
-                <tr>
-                    <td>11/02/2022</td>
-                    <td>40</td>
-                    <td>33</td>
-                </tr>
-            </tbody>
+            <tbody></tbody>
         </table>
     </div>
     <div class="mark-table">
         <div class="sub-name">Subject: Science</div>
-        <table cellspacing="0">
+        <table cellspacing="0" class="resultstable" id="science">
             <thead>
                 <tr>
                     <th>Exam Date</th>
@@ -63,24 +43,12 @@
                     <th>Obtain Marks</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>02/02/2022</td>
-                    <td>80</td>
-                    <td>60</td>
-                </tr>
-                <tr>
-                    <td>11/02/2022</td>
-                    <td>40</td>
-                    <td>33</td>
-                </tr>
-
-            </tbody>
+            <tbody></tbody>
         </table>
     </div>
     <div class="mark-table">
         <div class="sub-name">Subject: English</div>
-        <table cellspacing="0">
+        <table cellspacing="0" class="resultstable" id="english">
             <thead>
                 <tr>
                     <th>Exam Date</th>
@@ -88,24 +56,12 @@
                     <th>Obtain Marks</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>31/03/2022</td>
-                    <td>70</td>
-                    <td>60</td>
-                </tr>
-                <tr>
-                    <td>11/04/2022</td>
-                    <td>50</td>
-                    <td>37</td>
-                </tr>
-
-            </tbody>
+            <tbody></tbody>
         </table>
     </div>
     <div class="mark-table">
         <div class="sub-name">Subject: Social Studies</div>
-        <table cellspacing="0">
+        <table cellspacing="0" class="resultstable" id="social-studies">
             <thead>
                 <tr>
                     <th>Exam Date</th>
@@ -113,18 +69,7 @@
                     <th>Obtain Marks</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>11/04/2022</td>
-                    <td>100</td>
-                    <td>80</td>
-                </tr>
-                <tr>
-                    <td>20/04/2022</td>
-                    <td>50</td>
-                    <td>38</td>
-                </tr>
-            </tbody>
+            <tbody></tbody>
         </table>
     </div>
 
