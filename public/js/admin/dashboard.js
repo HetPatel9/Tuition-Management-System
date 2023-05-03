@@ -4,6 +4,8 @@ async function INIT() {
     let $selectedStd = document.querySelector('.selected-std');
     let $selectedSub = document.querySelector('.selected-sub');
     const $resultsTable = document.querySelector('#resultstable');
+    let flag = false;
+    const $header = document.querySelector('.header');
 
     $stdButtons.forEach(btn => {
         btn.addEventListener('click', async function () {
@@ -51,13 +53,18 @@ async function INIT() {
             credentials: 'include'
         });
 
-        const { data } = await res.json();
+        const { data: { user, results } } = await res.json();
+        if (!flag) {
+            $header.innerHTML = `<h1>Welcome, ${user.firstName}</h1>`;
+            flag = true;
+        }
 
-        return data;
+        return results;
     }
 
     function renderTable(data) {
-        $resultsTable.children[1].innerHTML = data.map(result => `
+        if (data)
+            $resultsTable.children[1].innerHTML = data.map(result => `
         <tr>
             <td>${result.studentId}</td>
             <td>${result.date}</td>
@@ -72,7 +79,7 @@ async function INIT() {
         renderTable(results);
     }
 
-    refresh({
+    await refresh({
         sub: $selectedSub.getAttribute('data-value'),
         std: $selectedStd.getAttribute('data-value')
     });

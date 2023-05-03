@@ -48,7 +48,15 @@ router.get('/results', firewall, async (req, res, next) => {
             total: result.test.total
         }));
 
-        return res.send({ message: 'Success', data: results });
+        return res.send({
+            message: 'Success', data: {
+                user: {
+                    firstName: req.user.name.firstName,
+                    lastName: req.user.name.lastName
+                },
+                results
+            }
+        });
     } catch (err) {
         console.error(err);
         next(new CustomError());
