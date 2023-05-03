@@ -22,16 +22,25 @@ async function INIT() {
         container.scrollBy({
             left: boxLength * 0.5,
             behavior: "smooth"
-        });
+        })
 
-        // This condition makes scrolling circular
         if (container.scrollLeft > container.offsetWidth) {
             container.scrollTo({
                 left: 0,
                 behavior: "smooth"
             });
+            
+    
+            // This condition makes scrolling circular
+            if (container.scrollLeft > container.offsetWidth) {
+                container.scrollTo({
+                    left: 0,
+                    behavior: "smooth"
+                });
+            }
         }
     });
+
 
     let links = document.querySelectorAll('a');
     links.forEach((link) => {

@@ -1,5 +1,4 @@
 async function INIT() {
-
     const $stdButtons = document.querySelectorAll('.std-btn');
     const $subButtons = document.querySelectorAll('.sub-btn');
     let $selectedStd = document.querySelector('.selected-std');

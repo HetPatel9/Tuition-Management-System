@@ -3,9 +3,9 @@
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
 }
-
-body {
-    background-image: url('/images/add-delete-update-bgimage.jpg');
+body{
+    /* background-image: url('/images/add-delete-update-bgimage.jpg'); */
+    background-image: url('https://media.istockphoto.com/id/1219802805/photo/empty-classroom-pandemic-concept.jpg?b=1&s=612x612&w=0&k=20&c=LokLu2l7620_JAtPNQUdFJCsV67MymNQozTpoFRLtng=');
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
