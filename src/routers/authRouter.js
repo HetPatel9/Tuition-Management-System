@@ -47,12 +47,12 @@ router.post('/login', async (req, res, next) => {
 router.post('/register', async (req, res, next) => {
     try {
         let {
-            fname: firstName,
-            lname: lastName,
+            firstName,
+            lastName,
             email,
             password,
             std,
-            phNo: phoneNo,
+            phoneNo,
             enrolNo
         } = req.body;
 
