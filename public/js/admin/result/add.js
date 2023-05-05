@@ -13,13 +13,12 @@ async function INIT() {
             total: e.target.elements.total.value
         };
 
-        console.log(body);
-
         const res = await fetch('/api/test/add', {
             method: 'POST',
             credentials: 'include',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
             },
             body: JSON.stringify(body)
         });
@@ -38,8 +37,14 @@ async function INIT() {
 
     $resultsForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        console.log(resultsBody);
-        resultsBody.results[e.target.elements.enrolNo.value] = e.target.elements.marks.value;
+        const enrolNo = parseInt(e.target.elements.enrolNo.value)
+        const marks  = parseFloat(e.target.elements.marks.value)
+        
+        if(marks > resultsBody.test.total){
+            return alert('Marks cannot be more than the Total marks of Test')
+        }
+
+        resultsBody.results[enrolNo] = marks;
         e.target.reset();
     });
 

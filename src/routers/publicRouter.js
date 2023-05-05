@@ -8,16 +8,16 @@ const redirectionMiddleware = (req, res, next) => {
     next();
 };
 
-router.get('/', redirectionMiddleware, (req, res) => {
-    res.sendFile(LANDING_PAGE);
+router.get('/',  redirectionMiddleware, (req, res) => {
+    return res.sendFile(LANDING_PAGE);
 });
 
 router.get('/login', redirectionMiddleware, (req, res) => {
-    res.sendFile(LOGIN_PAGE);
+    return res.sendFile(LOGIN_PAGE);
 });
 
 router.get('/signup', redirectionMiddleware, (req, res) => {
-    res.sendFile(SIGNUP_PAGE);
+    return res.sendFile(SIGNUP_PAGE);
 });
 
 module.exports = router;

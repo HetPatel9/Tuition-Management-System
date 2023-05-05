@@ -50,6 +50,9 @@ async function INIT() {
 
         const res = await fetch(`/api/results${query}`, {
             method: 'GET',
+            headers: {
+                'Accept':'application/json'
+            },
             credentials: 'include'
         });
 
@@ -63,16 +66,29 @@ async function INIT() {
     }
 
     function renderTable(data) {
-        if (data)
+        console.log(data);
+
+        if (data.length)
             $resultsTable.children[1].innerHTML = data.map(result => `
         <tr>
             <td>${result.studentId}</td>
             <td>${result.date}</td>
-            <td>${result.marks}</td>
+            <td>${result.status === 'PRESENT' ? result.marks : result.status}</td>
             <td>${result.total}</td>
         </tr>
         `).join('');
+        else{
+            $resultsTable.children[1].innerHTML = `
+            <tr>
+                <td class="no-data" colspan="4"><h2>No Data Found</h2></td>
+                
+            </tr>`
+            
+        }
     }
+    
+
+    
 
     async function refresh(queryParams) {
         const results = await getResults(queryParams);

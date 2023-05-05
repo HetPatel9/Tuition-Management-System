@@ -6,10 +6,8 @@ const { CustomError } = require('../utils/customError');
 module.exports = async function (req, res, next) {
     try {
         const token = req.cookies['auth-token'];
-        if (!token) {
-            return res.redirect(301, '/login');
-        }
-
+        if (!token) return res.redirect(301, '/login');
+        
         const { id } = jwt.verify(token, JWT_SECRET);
 
         let user = null;
@@ -23,10 +21,9 @@ module.exports = async function (req, res, next) {
             });
             if (user)
                 user.isAdmin = true;
-            else
-                return res.redirect(301, '/login');
+            else return res.redirect(301, '/login');
         }
-
+        
         req.user = user;
         req.token = token;
         next();

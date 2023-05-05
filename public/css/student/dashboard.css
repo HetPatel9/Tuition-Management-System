@@ -25,13 +25,27 @@ body{
     margin-left: 20px;
 }
 .icon{
-    width: 20%;
+    width: fit-content;
     height: inherit;
+    margin-left: 10px;
 }
 .icon img{
     height: inherit;
     float: right;
     margin-right: 20px; 
+}
+
+nav form button{
+    height: 30px;
+    width: 120px;
+    font-size: 25px;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(255, 78, 78);
 }
 .mark-table{
     width: 60%;

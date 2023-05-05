@@ -4,7 +4,7 @@ const firewall = require('./firewall');
 const prisma = require('../prisma');
 const { PAGE_NOT_FOUND } = require('../utils/paths');
 const { STANDARD, SUBJECT, STATUS } = require('../utils/constants');
-const { CustomError } = require('../utils/customError');
+const { CustomError, ERRORS } = require('../utils/customError');
 
 const router = Router();
 
@@ -45,7 +45,8 @@ router.get('/results', firewall, async (req, res, next) => {
             studentId: result.enrolNo,
             marks: result.marks,
             date: moment(result.test.date).format('DD/MM/YYYY'),
-            total: result.test.total
+            total: result.test.total,
+            status: result.status
         }));
 
         return res.send({
@@ -139,7 +140,8 @@ router.post('/test', firewall, async (req, res, next) => {
             data: {
                 id: test.id,
                 std,
-                subject
+                subject,
+                total: test.total
             }
         });
     } catch (err) {
@@ -159,8 +161,6 @@ router.post('/test/add', firewall, async (req, res, next) => {
             subject,
             total
         } = req.body;
-
-        console.log(req.body);
 
         if (moment(date, 'YYYY-MM-DD', true).isValid()) {
             date = moment(date, 'YYYY-MM-DD').toISOString();
@@ -183,7 +183,8 @@ router.post('/test/add', firewall, async (req, res, next) => {
             data: {
                 id: test.id,
                 std,
-                subject
+                subject,
+                total: test.total
             }
         });
     } catch (err) {
@@ -217,9 +218,11 @@ router.delete('/test/delete', firewall, async (req, res, next) => {
             }
         });
 
-        return res.redirect(302, '/dashboard');
+        // return res.redirect(302, '/dashboard');
+        return res.send({message: 'Success'})
     } catch (err) {
         console.error(err);
+        if(err.code === 'P2025') return next(new CustomError(ERRORS.CERR_46))
         next(new CustomError());
     }
 });
@@ -237,7 +240,7 @@ router.post('/results/add', firewall, async (req, res, next) => {
         const data = allStudents.map(student => {
             const temp = {
                 testId: id,
-                enrolNo: student.enrolNo
+                enrolNo: parseInt(student.enrolNo)
             };
 
             results[student.enrolNo] ?
@@ -246,11 +249,12 @@ router.post('/results/add', firewall, async (req, res, next) => {
             return temp;
         });
 
-        console.log(data);
-
         await prisma.result.createMany({ data });
 
-        return res.redirect(302, '/dashboard');
+        // return res.redirect(302, '/dashboard');
+        return res.send({
+            message: 'Success'
+        })
     } catch (err) {
         console.error(err);
         next(new CustomError());
@@ -258,6 +262,7 @@ router.post('/results/add', firewall, async (req, res, next) => {
 });
 
 router.put('/results/update', firewall, async (req, res, next) => {
+    console.log(req.body);
     try {
         if (!req.user.isAdmin) return res.sendFile(PAGE_NOT_FOUND);
 
@@ -266,20 +271,26 @@ router.put('/results/update', firewall, async (req, res, next) => {
         const updateQuery = results.map(result => prisma.result.update({
             where: {
                 result_unique_key: {
-                    enrolNo: result.enrolNo,
+                    enrolNo: parseInt(result.enrolNo),
                     testId: id
                 }
             },
             data: {
-                marks: result.obtained ?? -1,
+                marks: result.marks ? parseFloat(result.marks) : -1,
                 status: STATUS[result.status]
             }
         }));
 
         await prisma.$transaction(updateQuery);
-        return res.redirect(302, '/dashboard');
+        // return res.redirect(302, '/dashboard');
+        return res.send({
+            message: 'Success'
+        })
     } catch (err) {
         console.error(err);
+        if(err.code === 'P2025') {
+            return next(new CustomError(ERRORS.CERR_46))
+        }
         next(new CustomError());
     }
 });
@@ -307,13 +318,16 @@ router.delete('/results/delete', firewall, async (req, res, next) => {
         await prisma.result.deleteMany({
             where: {
                 OR: students.map(student => ({
-                    enrolNo: student
+                    enrolNo: parseInt(student)
                 })),
                 testId: test.id
             }
         });
 
-        return res.redirect(302, '/dashboard');
+        // return res.redirect(302, '/dashboard');
+        return res.send({
+            message: 'Success'
+        })
     } catch (err) {
         console.error(err);
         next(new CustomError());

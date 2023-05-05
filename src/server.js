@@ -19,7 +19,7 @@ app.use(express.static(PUBLIC_DIR, {
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(CookieParser());
-app.use(publicRouter, privateRouter);
+app.use(privateRouter, publicRouter);
 app.use('/api', authRouter, resultsRouter);
 app.use(errorsHandler);
 

@@ -3,14 +3,17 @@ async function INIT() {
 
     const res = await fetch('/api/student/results', {
         method: 'GET',
+        headers: {
+            'Accept':'application/json'
+        },
         credentials: 'include'
     });
 
     const { data: { name, results } } = await res.json();
+    console.log(results);
 
     $header.innerHTML = `<h1>Welcome, ${name.firstName}</h1>`;
     let tables = document.querySelectorAll('.resultstable');
-    console.log(tables);
 
     tables.forEach(table => {
         const key = table.getAttribute('id').toUpperCase();
@@ -37,11 +40,9 @@ async function INIT() {
         }
     });
 
-    for (let sub in results) {
-        console.log(sub.toLowerCase());
-        // table = document.querySelector(`#${sub.toLowerCase()}`);
-        console.log(results[sub]);
-    }
+    // for (let sub in results) {
+    //     // table = document.querySelector(`#${sub.toLowerCase()}`);
+    // }
 
 }
 

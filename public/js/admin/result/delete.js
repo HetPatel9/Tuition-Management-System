@@ -1,5 +1,5 @@
 async function INIT() {
-    const $deleteForm = document.querySelector('#delete-form');
+    const $deleteForm = document.querySelector('.delete-form');
     const $textareabox = document.querySelector('#textareabox');
     const $checkbox = document.querySelector('#rec-dlt');
 
@@ -39,7 +39,8 @@ async function INIT() {
             method: 'DELETE',
             credentials: 'include',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
             },
             body: JSON.stringify(body)
         });

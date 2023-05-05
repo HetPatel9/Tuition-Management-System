@@ -4,7 +4,6 @@ async function INIT() {
     const leftArrow = document.querySelector('#left-arrow');
 
     leftArrow.addEventListener('click', () => {
-        console.log(boxLength);
         container.scrollBy({
             left: boxLength * -0.5,
             behavior: "smooth"
@@ -50,8 +49,6 @@ async function INIT() {
             link.classList.add('activeLink');
         });
     });
-
-    console.log(document.cookie);
 }
 
 INIT();

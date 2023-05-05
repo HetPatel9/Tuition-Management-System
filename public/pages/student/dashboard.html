@@ -13,13 +13,13 @@
 <body background="fixed">
     <nav>
         <div class="header"></div>
-        <div class="icon">
+        <form action="/api/logout" method="POST">
+            <button type="submit">Logout</button>
+        </form>
+        <!-- <div class="icon">
             <img src="/images/studentlogo.png" alt="face icon">
-        </div>
+        </div> -->
     </nav>
-    <form action="/api/logout" method="POST">
-        <button type="submit">Logout</button>
-    </form>
     <div class="mark-table">
         <div class="sub-name">Subject: Maths</div>
         <table cellspacing="0" class="resultstable" id="maths">
@@ -61,7 +61,7 @@
     </div>
     <div class="mark-table">
         <div class="sub-name">Subject: Social Studies</div>
-        <table cellspacing="0" class="resultstable" id="social-studies">
+        <table cellspacing="0" class="resultstable" id="social_studies">
             <thead>
                 <tr>
                     <th>Exam Date</th>
